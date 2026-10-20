@@ -1,0 +1,339 @@
+/**
+ * 감자 마켓 (Gamza) - 로그인 / 회원가입 모달 스타일시트
+ */
+
+.gamza-auth-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background-color: rgba(42, 30, 23, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.gamza-auth-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gamza-auth-card {
+  position: relative;
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 20px;
+  box-shadow: 0 16px 36px rgba(42, 30, 23, 0.2);
+  padding: 32px 28px;
+  border: 1px solid var(--border-color, #E2D7C5);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.gamza-auth-overlay.is-open .gamza-auth-card {
+  transform: translateY(0) scale(1);
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg-subtle, #EFE7DA);
+  color: var(--text-sub, #655247);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s, transform 0.15s;
+}
+
+.auth-close-btn:hover {
+  background-color: var(--point-light, #FFF3BF);
+  color: var(--primary, #6E473B);
+  transform: scale(1.08);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.auth-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  background-color: #FFF3BF;
+  border: 2px solid #FFD43B;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(255, 212, 59, 0.3);
+}
+
+.auth-header h2 {
+  font-size: 1.38rem;
+  font-weight: 800;
+  color: var(--primary, #6E473B);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.auth-modal-desc {
+  font-size: 0.88rem;
+  color: var(--text-sub, #655247);
+  line-height: 1.4;
+}
+
+/* 탭 바 */
+.auth-tab-group {
+  display: flex;
+  background-color: var(--bg-subtle, #EFE7DA);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 20px;
+  gap: 4px;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  background: transparent;
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-sub, #655247);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.auth-tab-btn.active {
+  background-color: #FFFFFF;
+  color: var(--primary, #6E473B);
+  box-shadow: 0 2px 6px rgba(42, 30, 23, 0.08);
+}
+
+/* 폼 필드 공통 */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.auth-form label {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-main, #2A1E17);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #D9480F;
+  background-color: #FFE8CC;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: -0.2px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #E2D7C5);
+  background-color: var(--bg-surface, #FFFFFF);
+  color: var(--text-main, #2A1E17);
+  font-size: 0.93rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-form input::placeholder {
+  color: var(--text-muted, #968377);
+  font-size: 0.88rem;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #F0B400;
+  box-shadow: 0 0 0 3px rgba(255, 212, 59, 0.35);
+}
+
+.field-tip {
+  font-size: 0.78rem;
+  color: var(--text-muted, #968377);
+  padding-left: 2px;
+}
+
+/* 에러 / 성공 메시지 박스 */
+.auth-message-box {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-message-box.error {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FCA5A5;
+}
+
+.auth-message-box.success {
+  background-color: #E6F4EA;
+  color: #1E7E34;
+  border: 1px solid #A7F3D0;
+}
+
+/* 서브밋 버튼 */
+.btn-auth-submit {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background-color: var(--primary, #6E473B);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(110, 71, 59, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.btn-auth-submit:hover:not(:disabled) {
+  background-color: var(--primary-hover, #58372D);
+  box-shadow: 0 6px 16px rgba(110, 71, 59, 0.28);
+}
+
+.btn-auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* 하단 전환 링크 */
+.auth-footer-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.84rem;
+  color: var(--text-sub, #655247);
+}
+
+.auth-footer-switch .link-btn {
+  background: none;
+  border: none;
+  color: var(--primary, #6E473B);
+  font-weight: 700;
+  font-size: 0.84rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-family: inherit;
+}
+
+.auth-footer-switch .link-btn:hover {
+  color: #2A1E17;
+}
+
+/* 헤더 인증 버튼 그룹 및 사용자 프로필 배지 & 로그아웃 버튼 */
+.header-auth-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-subtle, #EFE7DA);
+  border: 1px solid var(--border-color, #E2D7C5);
+  padding: 4px 12px 4px 6px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary, #6E473B);
+}
+
+.header-user-profile img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #FFFFFF;
+}
+
+.header-user-name {
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-logout {
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  color: var(--text-sub, #655247);
+  background-color: transparent;
+  border: 1px solid var(--border-color, #E2D7C5);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.btn-logout:hover {
+  background-color: #FEE2E2;
+  border-color: #FCA5A5;
+  color: #B91C1C;
+}
+
+@media (max-width: 480px) {
+  .gamza-auth-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  .header-user-name {
+    max-width: 70px;
+  }
+}

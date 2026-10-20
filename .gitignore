@@ -1,0 +1,27 @@
+# Environment variables (Sensitive API Keys & Secrets)
+.env
+.env.local
+.env.*.local
+
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Logs & Temporary files
+*.log
+*.tmp
+*.bak
+
+# Dependencies (if any added in future)
+node_modules/
+package-lock.json
+
+# IDE & Editor configs
+.vscode/
+.idea/
+
+# Agent & Brain artifacts
+.system_generated/
